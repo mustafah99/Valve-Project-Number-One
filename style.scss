@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+$valvePink: #f74843;
+$fontFamily: 'Bebas Neue', cursive;
+
+body {
+    height: 100%;
+    background: url(hl-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4)
+}
+
+header {
+    width: 1000px;
+    display: flex;
+    position: relative;
+    left: 28.2%;
+    bottom: 20px;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+
+    h1 {
+        letter-spacing: 10px; /* Species the spacing with pixels as parameters in between letters. */
+        font-size: 50px;
+        padding: 0 15px;
+        background: $valvePink;
+        border: 10px solid $valvePink;
+    }
+
+    .smallE {
+        font-size: 30px;
+        position: relative;
+        top: -22%;
+    }
+}
+
+main {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    bottom: 50px;
+    div {
+        width: 650px;
+        h4 {
+            color: $valvePink;
+            font-size: 58px;
+            font-family: $fontFamily;
+            text-align: left;
+        }
+
+        p {
+            position: relative;
+            bottom: 30px;
+            font-family: $fontFamily;
+            font-size: 32px;
+            width: 650px;
+            margin: 0 auto;
+            color: white;
+        }
+    }
+}
+
+#onlyThis {
+
+    a:hover {
+        color: white;
+        transition: all 0.5s ease-out;
+    }
+    
+}
+nav {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 50px;
+    padding-bottom: 80px;
+    ul {
+        margin: 0 auto;
+
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+                color: $valvePink;
+                font-size: 70px;
+                font-weight: bold;
+                font-family: $fontFamily;
+            }
+
+            div {
+                display: none;
+                margin: 20px auto;
+                padding: 10px 200px;
+                position: relative;
+                right: 30%;
+                background-color: $valvePink;
+                width: 100%;
+                border-radius: 10px;
+                color: black;   
+                
+                h3 {
+                    position: relative;
+                    bottom: 10px;
+                    font-size: 44px;
+                    font-family: $fontFamily;
+                }
+
+                form {
+                    position: relative;
+                    bottom: 30px;   
+                    label {
+                        margin: 0 auto;
+                        position: relative;
+                        bottom: 5px;
+                        padding-bottom: 20px;
+                        display: flex;
+                        flex-direction: column; 
+                        font-family: $fontFamily;
+                        font-size: 24px;    
+    
+                        input {
+                            background-color: $valvePink;
+                            height: 40px;
+                            font-family: $fontFamily;
+                            font-size: 40px;
+                            border: none;
+                            position: relative;
+                            top: 15px;
+                        }
+    
+                        ::placeholder {
+                            color: white;
+                            opacity: 1;
+                        }
+                        
+                        button {
+                            position: relative;
+                            top: 20px;
+                            font-family: $fontFamily;
+                            font-size: 20px;    
+                            cursor: pointer;
+                            background-color: white;
+                            height: 60px;
+                            border: none;
+                            border-radius: 5px; 
+
+                            .space {
+                                padding-left: 2.5px;
+                                position: relative;
+                                font-size: 30px;
+                            }
+                        }
+                }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background: $valvePink;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-family: $fontFamily;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        right: 20px;
+    }
+
+    #divOne {
+        p {
+            color: white;
+            font-size: 25px;
+        }
+    }
+
+    #Contact {
+        color: black;
+    }
+
+    #People {
+        color: black;
+    }
+
+    ul {
+        li {
+            list-style: none;
+            text-align: left;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
