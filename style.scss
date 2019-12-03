@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
+@mixin animationDrop {
+  animation-name: dropDown;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+$valvePink: #f74843;
+$fontFamily: "Bebas Neue", cursive;
+$mobile: 414px;
+/* A @mixin for a mobile @media query. */
+@mixin mobile {
+  @media screen and (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+* {
+  @include mobile {
+    overflow-x: hidden;
+    max-width: 414px;
+  }
+}
+
+html {
+  height: 100%;
+  @include mobile {
+    overflow-x: hidden;
+    max-height: 812px;
+    max-width: 414px;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: url(hl-background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+  @include mobile {
+    max-width: 414px;
+    min-height: calc(100% - 200px);
+  }
+}
+
+header {
+  width: 1000px;
+  display: flex;
+  opacity: 0;
+  position: relative;
+  top: 0.5px;
+  left: 28.2%;
+  bottom: 20px;
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  @include animationDrop();
+
+  h1 {
+    letter-spacing: 10px; /* Species the spacing with pixels as parameters in between letters. */
+    font-size: 50px;
+    padding: 0 15px;
+    background: $valvePink;
+    border: 10px solid $valvePink;
+  }
+
+  .smallE {
+    font-size: 30px;
+    position: relative;
+    top: -22%;
+  }
+}
+
+@keyframes dropDown {
+  0% {
+    opacity: 0;
+    top: -25px;
+  }
+  50% {
+    opacity: 1;
+    top: 0.5px;
+  }
+  100% {
+    opacity: 1;
+    top: 0.5px;
+  }
+}
+
+main {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  bottom: 50px;
+  section {
+    width: 650px;
+    @include mobile {
+      max-width: 414px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      bottom: 30px;
+    }
+    h4 {
+      color: $valvePink;
+      font-size: 58px;
+      font-family: $fontFamily;
+      text-align: left;
+      @include mobile {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        max-width: 380px;
+      }
+    }
+
+    p {
+      position: relative;
+      bottom: 30px;
+      font-family: $fontFamily;
+      font-size: 32px;
+      width: 650px;
+      margin: 0 auto;
+      color: white;
+      @include mobile  {
+        word-wrap: break-word;
+        padding: 30px;
+        padding-top: 60px;
+        bottom: 100px;
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+#onlyThis {
+  a:hover {
+    color: white;
+    transition: all 0.5s ease-out;
+  }
+}
+nav {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 50px;
+  padding-bottom: 140px;
+  @include mobile {
+    max-width: 414px;
+    bottom: 80px;
+    right: 15px;
+  }
+  ul {
+    margin: 0 auto;
+
+    li {
+      list-style: none;
+      @include mobile {
+        max-width: 414px;
+      }
+
+      div {
+        @include mobile {
+          position: relative;
+          max-width: 200px;
+          display: flex;
+          margin: 0 auto;
+          align-items: center;
+          justify-content: center;
+          padding: 30px;
+
+          h3,
+          p,
+          form {
+            position: relative;
+            right: 32.5px;
+
+            label {
+              input[placeholder="Search here..."] {
+                position: relative;
+                max-width: 414px;
+                padding: 0;
+              }
+            }
+          }
+        }
+      }
+
+      #aboutUsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 500px;
+        @include mobile {
+          position: relative;
+          max-width: 414px;
+          display: flex;
+          margin: 0 auto;
+          align-items: center;
+          justify-content: center;
+          padding: 30px;
+          padding-bottom: 0;
+          max-height: 760px;
+          article {
+            @include mobile {
+            width: 414px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: visible;
+
+            h3 {
+              @include mobile {
+                position: relative;
+                width: 200px;
+                right: 105px;
+              }
+
+            }
+            p {
+              @include mobile {
+                position: relative;
+                right: 105px;
+                width: 300px;
+                bottom: 80px;
+              }
+            }
+            }
+          }
+        }
+      }
+
+      #jobResults {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 500px;
+        @include mobile {
+          position: relative;
+          max-width: 200px;
+          display: flex;
+          margin: 0 auto;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #cardResults {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          text-align: center;
+          max-width: 200px;
+          @include mobile {
+            position: relative;
+            width: 100%;
+            padding: 0;
+            padding-top: 20px;
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        .flexbox {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .cards {
+          font-family: $fontFamily;
+          color: white;
+          padding: 30px;
+          box-shadow: 3px 5px 4px #333;
+          width: 100%;
+          width: 200px;
+          padding: 0;
+          margin: 0 auto;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          @include mobile {
+            position: relative;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: auto;
+          }
+
+          h3,
+          img,
+          p {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        .jobs {
+          border: 2px solid #000;
+          padding: 30px;
+          box-shadow: 3px 5px 4px #333;
+          margin-bottom: 10%;
+          width: 100%;
+          @include mobile {
+            padding: 80px;
+            position: relative;
+            right: 50px;
+            max-width: 200px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 0px 0px #333;
+          }
+        }
+
+        h3 {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: $valvePink;
+        font-size: 70px;
+        font-weight: bold;
+        font-family: $fontFamily;
+      }
+
+      #aboutUsContainer {
+        display: none;
+        margin: 20px auto;
+        padding: 10px 200px;
+        position: relative;
+        right: 30%;
+        background-color: $valvePink;
+        width: 100%;
+        border-radius: 10px;
+        color: black;
+        margin: 0 auto;
+        max-width: 500px;
+        margin-bottom: 20px;
+        h3 {
+          text-align: center;
+          position: relative;
+        }
+
+        p {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          color: white;
+          font-family: $fontFamily;
+          font-size: 30px;
+          position: relative;
+          bottom: 40px;
+        }
+      }
+
+      div {
+        display: none;
+        margin: 20px auto;
+        padding: 10px 200px;
+        position: relative;
+        right: 30%;
+        background-color: $valvePink;
+        width: 100%;
+        border-radius: 10px;
+        color: black;
+
+        h3 {
+          position: relative;
+          bottom: 10px;
+          font-size: 44px;
+          font-family: $fontFamily;
+        }
+
+        form {
+          position: relative;
+          bottom: 30px;
+          label {
+            margin: 0 auto;
+            position: relative;
+            bottom: 5px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            font-family: $fontFamily;
+            font-size: 24px;
+
+            input {
+              background-color: $valvePink;
+              height: 40px;
+              font-family: $fontFamily;
+              font-size: 40px;
+              border: none;
+              position: relative;
+              top: 15px;
+            }
+
+            ::placeholder {
+              color: white;
+              opacity: 1;
+            }
+
+            button {
+              position: relative;
+              top: 20px;
+              font-family: $fontFamily;
+              font-size: 20px;
+              cursor: pointer;
+              background-color: white;
+              height: 60px;
+              border: none;
+              border-radius: 5px;
+
+              .textContainer {
+                position: relative;
+                bottom: 2.5px;
+
+                .space {
+                  padding-left: 2.5px;
+                  position: relative;
+                  font-size: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: $valvePink;
+  text-align: center;
+  display: block;
+  position: absolute;
+  padding-bottom: 7.5px;
+  width: 100%;
+  bottom: 0;
+  margin: 0 auto;
+  font-family: $fontFamily;
+  @include mobile {
+    position: relative;
+    width: 414px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    right: 20px;
+    @include mobile {
+      width: 375px;
+    }
+  }
+
+  #divTwo,
+  #divThree {
+    position: relative;
+    top: 10px;
+  }
+
+  #divOne {
+    @include mobile {
+      max-width: 375px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      left: 25px;
+    }
+    p {
+      color: white;
+      font-size: 25px;
+    }
+
+    .myGitHub {
+      position: relative;
+      bottom: 25px;
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+    }
+
+    i {
+      padding-left: 5px;
+    }
+
+    i {
+      color: white;
+    }
+  }
+
+  #Contact {
+    color: black;
+  }
+
+  #People {
+    color: black;
+  }
+
+  ul {
+    li {
+      list-style: none;
+      text-align: left;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+.white {
+  color: white;
+}
