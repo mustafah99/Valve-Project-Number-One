@@ -8,6 +8,6 @@
 
 - Styled using SASS Preprocessor for CSS.
 
-See website through this following link:
+See website through my GitHub pages for this repository:
 
 https://mustafah99.github.io/Valve-Project-Number-One/
